@@ -1,10 +1,17 @@
 import React from 'react'
 
+import { Container } from './styles'
+import BottomMenu from '../../components/BottomMenu'
+import Heading from './Heading'
+import Form from './Form'
+
 const CreateBook = () => {
   return (
-    <>
-      <h1>CreateBookssss</h1>
-    </>
+    <Container>
+      <Heading title="Add a new book"/>
+      <Form />
+      <BottomMenu />
+    </Container>
   )
 }
 
