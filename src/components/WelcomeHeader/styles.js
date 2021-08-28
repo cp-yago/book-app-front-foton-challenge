@@ -4,7 +4,8 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 1.5rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
 
   span:nth-child(2) {
     color: #FF6978;

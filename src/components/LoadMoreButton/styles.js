@@ -8,6 +8,9 @@ const LoadMoreButton = styled.button`
   border: none;
   color: #FFFFFF;
   padding: 0 10px;
+
+  position: absolute;
+  bottom: 100px;
 `;
 
 export { LoadMoreButton }

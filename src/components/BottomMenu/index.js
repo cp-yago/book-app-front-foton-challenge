@@ -8,7 +8,8 @@ import { Home, Add, Person } from '@material-ui/icons'
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    marginTop: 'auto',
+    position: 'absolute',
+    bottom: '0'
   },
 });
 

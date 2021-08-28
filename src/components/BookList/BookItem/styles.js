@@ -17,10 +17,11 @@ const Container = styled.div`
 
     img {
       height: 153px;
+      width: 100%;
     }
   }
 
-  .bookTitle {
+  .bookName {
     font-size: 12px;
     font-family: Nunito, sans-serif;
     color: rgba(49, 49, 49, 0.8);

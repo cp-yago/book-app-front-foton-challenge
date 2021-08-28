@@ -8,9 +8,9 @@ const BookList = ({ bookList }) => {
     <Container>
       {bookList.map(book => (
         <BookItem
-        key={book.id} 
-        id={book.id} 
-        title={book.name} 
+          key={book.id} 
+          id={book.id} 
+          title={book.name} 
           description={book.description}
           onClick 
         />

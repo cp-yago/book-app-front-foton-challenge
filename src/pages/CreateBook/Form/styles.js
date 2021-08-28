@@ -11,7 +11,6 @@ const Container = styled.form`
   span {
     font-size: 16px;
     align-self: flex-start;
-    margin-left: 20px;
   }
 
   input {
@@ -29,10 +28,15 @@ const Container = styled.form`
     height: 150px;
   }
 
+  .inputLabel {
+    position: relative;
+    left: 50px;
+  }
+
   .errorMessage {
     position: relative;
-    top: -20px;
-    left: 5px;
+    top: -23px;
+    left: 50px;
     font-size: 12px;
     color: #FF6978;
   }

@@ -5,7 +5,7 @@ import { Container } from './styles'
 
 import BookImg from '../../../assets/img/book1.png'
 
-const BookItem = ({ id, name, description }) => {
+const BookItem = ({ id, title, description }) => {
   const history = useHistory()
 
   const navigateToBookDetail = useCallback((bookId) => {
@@ -16,7 +16,7 @@ const BookItem = ({ id, name, description }) => {
     <Container>
       <button type="button" onClick={() => navigateToBookDetail(id)}>
         <img src={BookImg} alt="book-cover" />
-        <span className="bookName">{name}</span>
+        <span className="bookName">{title}</span>
         <span className="bookDescription">{description}</span>
       </button>
     </Container>

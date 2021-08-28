@@ -11,7 +11,6 @@ import LoadMoreButton from '../../components/LoadMoreButton'
 import api from '../../services/api'
 
 const Home = () => {
-
   const initialFilters = useMemo(() => ({
     page: 0,
     pageLimit: 5,
@@ -31,7 +30,7 @@ const Home = () => {
     if (response) {
       setBooks(response.data)
     }
-  }, [search])
+  }, [search, filters])
 
   const handleSearchInputChange = useCallback((value) => {
     setSearch(value)
@@ -49,8 +48,6 @@ const Home = () => {
 
     const response = await api.get("/books", { params })
     
-    // setFilters(params)
-
     if (response) setBooks([...books, ...response.data])
 
   }, [filters, books])
@@ -68,7 +65,7 @@ const Home = () => {
 
       <BookList bookList={books} />
 
-      <LoadMoreButton onClick={handleLoadMore} />
+      {books.length > 0 && (<LoadMoreButton onClick={handleLoadMore} />)}
 
       <BottomMenu />
       

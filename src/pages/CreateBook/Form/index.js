@@ -23,15 +23,16 @@ const Form = () => {
   return (
     <>
       <Container onSubmit={handleSubmit(onSubmit)}>
-        <span>Name</span>
+
+        <span className="inputLabel">Name</span>
         <input {...register("name", { required: "This is a required field" })} />
         {errors.name && (<span className="errorMessage">{errors.name.message}</span>)}
 
-        <span>Author</span>
+        <span className="inputLabel">Author</span>
         <input {...register("author", { required: "This is a required field" })} />
         {errors.author && (<span className="errorMessage">{errors.author.message}</span>)}
 
-        <span>Description</span>
+        <span className="inputLabel">Description</span>
         <input {...register("description", { required: "This is a required field" })} className="textArea"/>
         {errors.description && (<span className="errorMessage">{errors.description.message}</span>)}
 
