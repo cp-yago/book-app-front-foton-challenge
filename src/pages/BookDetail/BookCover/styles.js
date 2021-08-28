@@ -8,6 +8,12 @@ const Container = styled.div`
 
   border-radius: 0 0 100px 0;
 
+  .gobackIcon {
+    position: absolute;
+    top: 25px;
+    left: 20px
+  }
+
   .texture1 {
     position: absolute;
     right: 0;

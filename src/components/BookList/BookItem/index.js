@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { Container } from './styles'
 
 import BookImg from '../../../assets/img/book1.png'
 
-const BookItem = () => {
+const BookItem = ({ id, name, description }) => {
+  const history = useHistory()
+
+  const navigateToBookDetail = useCallback((bookId) => {
+    history.push(`/book/${bookId}`)
+  }, [history])
+
   return (
     <Container>
-      <button>
+      <button type="button" onClick={() => navigateToBookDetail(id)}>
         <img src={BookImg} alt="book-cover" />
-        <span className="bookTitle">Good to Great</span>
-        <span className="bookDescription">by Jim Collins</span>
+        <span className="bookName">{name}</span>
+        <span className="bookDescription">{description}</span>
       </button>
     </Container>
   )

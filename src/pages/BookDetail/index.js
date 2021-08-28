@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import api from '../../services/api'
 
 import { Container } from './styles'
 import BookCover from './BookCover'
@@ -6,13 +8,29 @@ import BookCover from './BookCover'
 import Book1 from '../../assets/img/book1.png'
 
 const BookDetail = () => {
+  const { bookId } = useParams()
+  const [book, setBook] = useState({})
+
+  const getBook = useCallback(async () => {
+    const response = await api.get(`/books/${bookId}`)
+    if (response) {
+      setBook(response.data)
+    } 
+  }, [bookId, setBook])
+
+  useEffect(() => {
+    if (bookId) {
+      getBook()
+    }
+  }, [bookId, getBook])
+
   return (
     <Container>
       <BookCover bookCoverUrl={Book1} />
       <div className="bookTitleContainer">
-        <span className="bookTitle">Hooked</span>
-        <span className="bookSubTitle">: How to Build Habid-Forming Products</span><br />
-        <span className="authorName">Nir Eyal</span>
+        <span className="bookTitle">{book.name}</span>
+        <span className="bookSubTitle">:{book.description}</span><br />
+        <span className="authorName">{book.author}</span>
       </div>
       <div className="descriptionContainer">
         <p>
