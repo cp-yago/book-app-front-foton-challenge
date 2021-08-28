@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Home, Add, Person } from '@material-ui/icons'
 
@@ -12,21 +13,21 @@ const useStyles = makeStyles({
 });
 
 const BottomMenu = () => {
-  const [value, setValue] = useState(0);
+  const [tabIndex, setTabIndex] = useState(0);
   const classes = useStyles()
 
   return (
     <BottomNavigation
-      value={value}
+      value={tabIndex}
       onChange={(event, newValue) => {
-        setValue(newValue);
+        setTabIndex(newValue);
       }}
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Home" icon={<Home/>} />
-      <BottomNavigationAction label="Add Book" icon={<Add/>} />
-      <BottomNavigationAction label="Profile" icon={<Person/>} />
+      <BottomNavigationAction label="Home" icon={<Home/>} component={Link} to="/"/>
+      <BottomNavigationAction label="Add Book" icon={<Add/>} component={Link} to="/book/form"/>
+      <BottomNavigationAction label="Profile" icon={<Person/>} component={Link} to="/" />
     </BottomNavigation>
   )
 }
