@@ -21,7 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     getBooks()
-  }, [])
+  }, [getBooks])
 
   return (
     <Container>

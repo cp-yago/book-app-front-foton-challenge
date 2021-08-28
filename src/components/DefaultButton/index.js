@@ -4,7 +4,7 @@ import { Button } from './styles'
 
 const DefaultButton = ({ children }) => {
   return (
-    <Button>
+    <Button type="submit">
       {children}
     </Button>
   )
